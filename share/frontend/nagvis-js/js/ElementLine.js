@@ -843,7 +843,11 @@ var ElementLine = Element.extend({
         var KB   = 1024;
         var MB   = 1024 * 1024;
         var GB   = 1024 * 1024 * 1024;
-        if(set[1] > GB) {
+        var TB   = 1024 * 1024 * 1024 * 1024;
+        if(set[1] > TB) {
+            set[1] /= TB
+            set[2]  = 'Tbit/s'
+        } else if(set[1] > GB) {
             set[1] /= GB
             set[2]  = 'Gbit/s'
         } else if(set[1] > MB) {
@@ -866,7 +870,11 @@ var ElementLine = Element.extend({
         var KB   = 1024;
         var MB   = 1024 * 1024;
         var GB   = 1024 * 1024 * 1024;
-        if(set[1] > GB) {
+        var TB   = 1024 * 1024 * 1024 * 1024;
+        if(set[1] > TB) {
+            set[1] /= TB
+            set[2]  = 'TB/s'
+        } else if(set[1] > GB) {
             set[1] /= GB
             set[2]  = 'GB/s'
         } else if(set[1] > MB) {
